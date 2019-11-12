@@ -24,7 +24,7 @@ list. Those words that are found more often in the frequency list are
 **more likely** the correct results.
 
 ``pyspellchecker`` supports multiple languages including English, Spanish,
-German, French, and Portuguese. Dictionaries were generated using
+German, French, Bengali, and Portuguese. Dictionaries were generated using
 the `WordFrequency project <https://github.com/hermitdave/FrequencyWords>`__ on GitHub.
 
 ``pyspellchecker`` supports **Python 3** and Python 2.7 but, as always, Python 3
@@ -69,8 +69,15 @@ forward:
 
     spell = SpellChecker()
 
-    print(spell.correction('বিদ্যলয়'))
-    # output: বিদ্যালয়
+    # find those words that may be misspelled
+    misspelled = spell.unknown(['something', 'is', 'hapenning', 'here'])
+
+    for word in misspelled:
+        # Get the one `most likely` answer
+        print(spell.correction(word))
+
+        # Get a list of `likely` options
+        print(spell.candidates(word))
 
 
 If the Word Frequency list is not to your liking, you can add additional
