@@ -32,7 +32,7 @@ class SpellChecker(object):
     def __init__(
         self,
         language="bn",
-        local_dictionary=None,
+        local_dictionary="bn.json",
         distance=2,
         tokenizer=None,
         case_sensitive=False,
