@@ -31,8 +31,8 @@ class SpellChecker(object):
 
     def __init__(
         self,
-        language="en",
-        local_dictionary="bn.json",
+        language="bn",
+        local_dictionary=None,
         distance=2,
         tokenizer=None,
         case_sensitive=False,
