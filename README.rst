@@ -69,16 +69,8 @@ forward:
 
     spell = SpellChecker()
 
-    # find those words that may be misspelled
-    misspelled = spell.unknown(['something', 'is', 'hapenning', 'here'])
-
-    for word in misspelled:
-        # Get the one `most likely` answer
-        print(spell.correction(word))
-
-        # Get a list of `likely` options
-        print(spell.candidates(word))
-
+    print(spell.correction('বিদ্যলয়'))
+    # output: বিদ্যালয়
 
 
 If the Word Frequency list is not to your liking, you can add additional
