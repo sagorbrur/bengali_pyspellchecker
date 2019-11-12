@@ -68,9 +68,11 @@ forward:
     from spellchecker import SpellChecker
 
     spell = SpellChecker()
+    
+    # print(spell.correction('বিদ্যলয়'))
 
     # find those words that may be misspelled
-    misspelled = spell.unknown(['something', 'is', 'hapenning', 'here'])
+    misspelled = spell.unknown(['আমর', 'দেশ', 'বাংলাদশ'])
 
     for word in misspelled:
         # Get the one `most likely` answer
@@ -78,7 +80,8 @@ forward:
 
         # Get a list of `likely` options
         print(spell.candidates(word))
-
+        # output: বাংলাদেশ {'বাংলাদেশ'}
+        
 
 If the Word Frequency list is not to your liking, you can add additional
 text to generate a more appropriate list for your use case.
